@@ -35,7 +35,7 @@ function css() {
 
 function js() {
 	return gulp
-		.src("./script.js")
+		.src("./js/*.js")
 		.pipe(sourcemaps.init())
 		.pipe(uglify())
 		.pipe(sourcemaps.write("."))
@@ -44,5 +44,5 @@ function js() {
 
 exports.default = () => {
 	gulp.watch("./css/*.css", css);
-	gulp.watch("./script.js", js);
+	gulp.watch("./js/*.js", js);
 };
